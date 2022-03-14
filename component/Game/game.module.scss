@@ -1,0 +1,23 @@
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+
+  .game {
+    display: flex;
+    justify-content: center;
+
+    .boardContainer {
+      margin-top: 25px;
+      width: 350px;
+      height: 420px;
+
+      .board {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-gap: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+  }
+}

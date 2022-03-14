@@ -1,0 +1,22 @@
+$gray: #787c7E;
+
+.navbar {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  font-family: CheltenhamBold;
+  font-weight: bold;
+  border-bottom: 1px solid #e1e1e1;
+  color: #3a3a73;
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+  }
+
+  .title {
+    font-size: 2em;
+    font-weight: bold;
+  }
+}

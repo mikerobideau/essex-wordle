@@ -1,0 +1,18 @@
+.key {
+  background: #D3D6DA;
+  font-family: inherit;
+  font-size: 0.8em;
+  font-weight: bold;
+  border: 0;
+  margin: 0 6px 6px 0;
+  height: 58px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
