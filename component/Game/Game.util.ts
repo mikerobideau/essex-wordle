@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 export const placeholders = [
     ['*', '*', '*', '*', '*'],
     ['*', '*', '*', '*', '*'],
@@ -7,8 +9,10 @@ export const placeholders = [
     ['*', '*', '*', '*', '*']
 ];
 
-export const isLetter = (key: string) => ['A','B','C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-    'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'].includes(key.toUpperCase());
+export const ALPHABET = ['A','B','C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+export const isLetter = (key: string) => ALPHABET.includes(key.toUpperCase());
 
 export const getGuessKey = (index: number) => `guess${index + 1}`;
 
@@ -48,4 +52,29 @@ export const getVictoryMessage = (guesses: number) => {
             return 'Phew'
         }
     }
+}
+
+export const getDefaultKeyboardClasses = () => {
+    const keyboardClasses = {};
+    ALPHABET.forEach(letter => keyboardClasses[letter] = null);
+    return keyboardClasses;
+}
+
+export const getGuessedLetters = (guesses) =>
+    _.uniq(Object.values(guesses)
+        .filter(guess => guess !== null)
+        .join('')
+        .toUpperCase());
+
+export const isInCorrectPosition = (letter, guesses, answer) => {
+    let guessValues = Object.values(guesses).filter(guess => guess !== null);
+    for (let i = 0; i < guessValues.length; i++) {
+        let guess = guessValues[i];
+        for (let j = 0; j < 5; j++) {
+            if (guess[j].toUpperCase() === letter && answer[j].toUpperCase() === letter) {
+                return true;
+            }
+        }
+    }
+    return false;
 }

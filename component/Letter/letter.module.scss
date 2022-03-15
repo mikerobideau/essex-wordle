@@ -24,7 +24,7 @@ $amber: #c9b458;
   box-sizing: border-box;
   text-transform: uppercase;
   user-select: none;
-  transition: transform 1s;
+  transition: transform 0.5s;
   transform-style: preserve-3d;
 }
 
@@ -33,19 +33,19 @@ $amber: #c9b458;
 }
 
 .letter2 {
-  transition-delay: 1s;
+  transition-delay: 0.5s;
 }
 
 .letter3 {
-  transition-delay: 2s;
+  transition-delay: 1s;
 }
 
 .letter4 {
-  transition-delay: 3s;
+  transition-delay: 1.5s;
 }
 
 .letter5 {
-  transition-delay: 4s;
+  transition-delay: 2s;
 }
 
 .empty {

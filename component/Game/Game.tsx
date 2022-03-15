@@ -59,7 +59,7 @@ const Game: FunctionComponent<GameProps> = ({answer}) => {
             setIsWin(true);
             window.setTimeout(() => {
                 toast.success(getVictoryMessage(guessIndex));
-            }, 5000);
+            }, 2500);
         }
     }, [guess]);
 
@@ -74,24 +74,24 @@ const Game: FunctionComponent<GameProps> = ({answer}) => {
     }, [handleKeyPress])
 
     return (
-        <div className={styles.gameContainer}>
+        <div className={styles.game}>
             <NavBar />
             <Toaster
                 position="top-center"
                 reverseOrder={false}/>
-            <div className={styles.game}>
-                <div className={styles.boardContainer}>
-                    <div className={styles.board}>
-                        {placeholders.map((placeholder, index) => <Word
-                            key={index}
-                            placeholder={placeholder}
-                            guess={getGuess(guessIndex, index, guess, completeGuesses)?.toUpperCase()}
-                            answer={answer.toUpperCase()}
-                            isComplete={!!completeGuesses[getGuessKey(index)]} /> )}
-                    </div>
+            <div className={styles.boardContainer}>
+                <div className={styles.board}>
+                    {placeholders.map((placeholder, index) => <Word
+                        key={index}
+                        placeholder={placeholder}
+                        guess={getGuess(guessIndex, index, guess, completeGuesses)?.toUpperCase()}
+                        answer={answer.toUpperCase()}
+                        isComplete={!!completeGuesses[getGuessKey(index)]} /> )}
                 </div>
             </div>
-            <Keyboard onClick={onKeyboardClick}/>
+            <div className={styles.keyboardContainer}>
+                <Keyboard onClick={onKeyboardClick} guesses={completeGuesses} answer={answer}/>
+            </div>
         </div>
     );
 };
