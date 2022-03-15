@@ -16,6 +16,6 @@ a {
 }
 
 @font-face {
-  font-family: 'CheltenhamBold';
-  src: local('CheltenhamBold'), url(../fonts/CheltenhamBold.otf) format('opentype');
+  font-family: 'Lobster';
+  src: local('Lobster'), url(../fonts/Lobster-Regular.ttf) format('truetype');
 }
