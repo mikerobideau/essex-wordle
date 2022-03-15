@@ -23,7 +23,12 @@ const Key: FunctionComponent<KeyProps> = ({char, onClick, color}) => {
     }
 
     return (
-        <div className={`${styles.key} ${getColorStyle(color)}`} onClick={onClick}>{char}</div>
+        <div className={`${styles.key} ${getColorStyle(color)} ${char.toUpperCase() === 'ENTER' ? styles.enter : ''}`}
+             onClick={onClick}>
+            {char.toUpperCase() === 'BACKSPACE' &&
+                <span className={styles.backspace}><img className={styles.backspaceIcon} src="icons/backspace.png" /></span>}
+            {char.toUpperCase() !== 'BACKSPACE' && <span>{char}</span>}
+        </div>
     )
 }
 

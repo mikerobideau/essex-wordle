@@ -3,6 +3,8 @@ $green: #6aaa64;
 $amber: #c9b458;
 
 .key {
+  width: 40px;
+  max-width: 40px;
   background: #D3D6DA;
   font-family: inherit;
   font-size: 0.8em;
@@ -34,4 +36,19 @@ $amber: #c9b458;
 .gray {
   background: $gray;
   color: white;
+}
+
+.backspace {
+  display: flex;
+  justify-content: center;
+
+  .backspaceIcon {
+    width: 20px;
+  }
+}
+
+.enter {
+  width: 60px;
+  max-width: 60px;
+  padding: 10px;
 }
