@@ -1,18 +1,18 @@
 $gray: #787c7E;
+$navy: #3a3a73;
 
 .navbar {
-  padding: 0.5rem;
+  padding: 0.25rem;
   display: flex;
   justify-content: center;
   font-family: Lobster;
   font-weight: bold;
   border-bottom: 1px solid #e1e1e1;
-  color: #3a3a73;
 
   .logo {
-    width: 40px;
-    height: 40px;
-    margin-right: 0.5rem;
+    width: 35px;
+    height: 35px;
+    margin: 2px 5px 0 0;
   }
 
   .title {
